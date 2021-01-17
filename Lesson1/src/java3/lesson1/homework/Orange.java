@@ -2,12 +2,12 @@ package java3.lesson1.homework;
 
 public class Orange extends Fruit
 {
-    private static final float weight = 1.5f;
+    private static final float WEIGHT = 1.5f;
 
     @Override
     public float getWeight()
     {
-        return weight;
+        return WEIGHT;
     }
 
     @Override

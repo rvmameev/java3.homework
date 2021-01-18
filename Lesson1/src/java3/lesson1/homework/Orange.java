@@ -4,8 +4,7 @@ public class Orange extends Fruit
 {
     private static final float WEIGHT = 1.5f;
 
-    @Override
-    public float getWeight()
+    public static float getWeight()
     {
         return WEIGHT;
     }

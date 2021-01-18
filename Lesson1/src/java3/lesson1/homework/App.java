@@ -21,14 +21,14 @@ public class App
         System.out.println(list);
 
         // 3. Большая задача. Фрукты и коробки.
-        Box<Apple> appleBox = new Box<>();
+        Box<Apple> appleBox = new Box<>(Apple.class);
         appleBox.add(new Apple());
         appleBox.add(new Apple());
 
         System.out.println("\nApple box: " + appleBox);
         System.out.println("Weight: " + appleBox.getWeight());
 
-        Box<Orange> orangeBox = new Box<>();
+        Box<Orange> orangeBox = new Box<>(Orange.class);
         orangeBox.add(new Orange());
         orangeBox.add(new Orange());
 
@@ -42,7 +42,7 @@ public class App
 
         System.out.println("The boxes are equals: " + orangeBox.Compare(appleBox));
 
-        Box<Apple> appleAnotherBox = new Box<>();
+        Box<Apple> appleAnotherBox = new Box<>(Apple.class);
         appleAnotherBox.add(new Apple());
 
         System.out.println("\nApple box: " + appleBox);

@@ -4,8 +4,7 @@ public class Apple extends Fruit
 {
     private static final float WEIGHT = 1.0f;
 
-    @Override
-    public float getWeight()
+    public static float getWeight()
     {
         return WEIGHT;
     }

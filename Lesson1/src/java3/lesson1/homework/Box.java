@@ -5,9 +5,11 @@ import java.util.*;
 public class Box<T extends Fruit>
 {
     private final List<T> store;
+    private final Class<T> clazz;
 
-    public Box()
+    public Box(Class<T> clazz)
     {
+        this.clazz = clazz;
         this.store = new ArrayList<>();
     }
 
@@ -18,12 +20,18 @@ public class Box<T extends Fruit>
 
     public float getWeight()
     {
-        if (store.isEmpty())
+        float weight = 0;
+
+        if (Apple.class.isAssignableFrom(clazz))
         {
-            return 0;
+            weight = Apple.getWeight();
+
+        } else if (Orange.class.isAssignableFrom(clazz))
+        {
+            weight = Orange.getWeight();
         }
 
-        return store.size() * store.get(0).getWeight();
+        return weight * store.size();
     }
 
     public boolean Compare(Box<? extends Fruit> box)
@@ -41,6 +49,6 @@ public class Box<T extends Fruit>
     @Override
     public String toString()
     {
-        return "Box " + store;
+        return clazz.getSimpleName() + " box " + store;
     }
 }

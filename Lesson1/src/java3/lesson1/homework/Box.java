@@ -30,6 +30,10 @@ public class Box<T extends Fruit>
         {
             weight = Orange.getWeight();
         }
+        else
+        {
+            throw new RuntimeException(String.format("Weight not defined (%s)", clazz.getName()));
+        }
 
         return weight * store.size();
     }

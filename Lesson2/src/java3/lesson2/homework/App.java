@@ -12,23 +12,23 @@ public class App
 
         service.initUsers();
 
-        demoRegisterUser(service, "login1", "pass1", "nick1");
-        demoRegisterUser(service, "login1", "pass2", "nick2");
-        demoRegisterUser(service, "login2", "pass2", "nick1");
-        demoRegisterUser(service, "login2", "pass2", "nick2");
+        demoRegisterUser(service, "login1", "pass1", "nick1"); // true
+        demoRegisterUser(service, "login1", "pass2", "nick2"); // false
+        demoRegisterUser(service, "login2", "pass2", "nick1"); // false
+        demoRegisterUser(service, "login2", "pass2", "nick2"); // true
 
         System.out.println();
 
-        demoGetNickname(service, "login1", "pass1");
-        demoGetNickname(service, "login1", "pass2");
-        demoGetNickname(service, "login2", "pass2");
+        demoGetNickname(service, "login1", "pass1"); // nick1
+        demoGetNickname(service, "login1", "pass2"); // null
+        demoGetNickname(service, "login2", "pass2"); // nick2
 
         System.out.println();
 
-        demoChangeNickname(service, "nick1", "nick3");
-        demoChangeNickname(service, "nick3", "nick2");
-        demoChangeNickname(service, "nick3", "nick1");
-        demoChangeNickname(service, "nick10", "nick11");
+        demoChangeNickname(service, "nick1", "nick3"); // 'nick1'->'nick3'
+        demoChangeNickname(service, "nick3", "nick2"); // Error
+        demoChangeNickname(service, "nick3", "nick1"); // 'nick3'->'nick1'
+        demoChangeNickname(service, "nick10", "nick11"); // Error
     }
 
     private static void demoRegisterUser(AuthService service, String login, String password, String nickname) throws SQLException

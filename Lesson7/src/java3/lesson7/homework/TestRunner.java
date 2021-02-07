@@ -43,6 +43,16 @@ public class TestRunner
         }
     }
 
+    public static void start(String className)
+    {
+        try
+        {
+            start(Class.forName(className));
+        } catch (ClassNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+    }
 
     private static void runTestMethods(Class clazz, Object instance) throws InvocationTargetException, IllegalAccessException
     {

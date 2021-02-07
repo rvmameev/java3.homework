@@ -14,5 +14,7 @@ public class App
         // присутствовать в единственном экземпляре, иначе необходимо бросить RuntimeException при запуске «тестирования».
         
         TestRunner.start(Tests.class);
+
+        TestRunner.start("java3.lesson7.homework.Tests");
     }
 }
